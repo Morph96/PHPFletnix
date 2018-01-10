@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FletNix: Abonnementen</title>
+    <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/CSSglobal.css">
+</head>
+<body>
+<div class="menu-containter">
+    <div class="menu">
+        <div class="navbar">
+
+            <div class="dropdown">
+                <button class="dropbtn">&#9776;
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <ul>Genres
+                        <li><a href=./filmoverzicht.html#Sci-fi>Sci-fi</a></li>
+                        <li><a href=./filmoverzicht.html#Actie>Actie</a></li>
+                        <li><a href=./filmoverzicht.html#Horror>Horror</a></li>
+                    </ul>
+                    <hr/>
+                    <a href="./index.html">Homepage</a>
+                    <a href="./filmoverzicht.html">Filmoverzicht</a>
+                    <a href="./about.html">Over ons</a>
+                    <a href="./abonnementen.html" class="active">Abonnementen</a>
+                </div>
+            </div>
+        </div>
+        <div class="logo">FletNix</div>
+    </div>
+</div>
+
+<div class="abonnementen-container">
+    <div class="abonnement">
+        <div class="abonnement1">
+            <div class="abonnement1-top"><strong>ULTRA BASIC</strong></div>
+            <div class="spacing decoration">
+                <div>Basis abonnement is voor</div>
+                <div><em>2 schermen</em></div>
+                <div>en mogelijk</div>
+                <div>vanaf een prijs van</div>
+            </div>
+            <div class="spacing decoration"><em> 5 euro pm</em></div>
+        </div>
+        <div class="abonnement1">
+            <div class="abonnement1-top"><strong>INTERMEDIATE</strong></div>
+            <div class="spacing decoration">
+                <div>Medium abonnement is voor</div>
+                <div><em>4 schermen</em></div>
+                <div>en mogelijk</div>
+                <div>vanaf een prijs van</div>
+            </div>
+            <div class="spacing decoration"><em> 10 euro pm</em></div>
+        </div>
+        <div class="abonnement1">
+            <div class="abonnement1-top"><strong>PROFESSIONAL</strong></div>
+            <div CLASS="spacing decoration">
+                <div>Professional abonnement is voor</div>
+                <div><em>6 schermen</em></div>
+                <div>en mogelijk</div>
+                <div>vanaf een prijs van</div>
+            </div>
+            <div class="spacing decoration"><em> 15 euro pm</em></div>
+        </div>
+    </div>
+</div>
+
+
+<div class="text-container">
+    <div class="text">
+        <div><p>Leuk dat je bij ons wilt inschrijven. Geef ons hieronder
+            je details en je kunt beginnen met het kijken van de leukste series en films</p></div>
+    </div>
+</div>
+
+
+<form method="get" action="">
+    <label for="naam">Naam: </label>
+    <input type="text" name="naam" id="naam"><br>
+    <label for="achternaam">Achternaam: </label>
+    <input type="text" name="achternaam" id="achternaam"><br>
+    <label for="land">Land: </label>
+    <select name="land" id="land">
+        <option value="">....</option>
+        <option value="nederland">Nederland</option>
+        <option value="duitsland">Deutschland</option>
+        <option value="belgie">Belgie</option>
+        <option value="italy">Italy</option>
+        <option value="frankrijk">France</option>
+        <option value="groot-britanie">Great Britain</option>
+        <option value="verenigde-staten">United States</option>
+        <option value="zuid-afrika">South Afrika</option>
+    </select><br>
+    <label for="geboortejaar">Geboortejaar: </label>
+    <input type="text" name="geboortejaar" id="geboortejaar">
+    <label for="rekeningnummer">Rekeningnummer: </label>
+    <input type="text" name="rekeningnummer" id="rekeningnummer">
+    <label for="emailaddress">Emailaddress: </label>
+    <input type="text" name="emailaddress" id="emailaddress"><br>
+    <label for="username">Username: </label>
+    <input type="text" name="username" id="username"><br>
+    <label for="wachtwoord">Wachtwoord: </label>
+    <input type="text" name="wachtwoord" id="wachtwoord"><br>
+    <label for="wachtwoord2">Wachtwoord Check: </label>
+    <input type="text" name="wachtwoord2" id="wachtwoord2"><br>
+    <label for="fletnixtype">FletNix type: </label>
+    <select name="fletnixtype" id="fletnixtype">
+        <option value="">....</option>
+        <option value="basic">BASIC</option>
+        <option value="medium">INTERMEDIATE</option>
+        <option value="prodessional">PROFESSIONAL</option>
+    </select><br>
+    <label for="betalingsmethod">Betalingsmethode</label>
+    <select name="betalingsmethode" id="betalingsmethod">
+        <option value="">....</option>
+        <option value="paypal">PayPal</option>
+        <option value="ideal">IDEAL</option>
+        <option value="creditcard">CreditCard</option>
+        <option value="natura">Natura</option>
+    </select><br>
+    <button type="submit">Verzenden</button>
+</form>
+<div class="copyright"><p>Copyright by Paul/Morten Productions</p></div>
+
+
+</body>
+</html>
