@@ -1,3 +1,6 @@
+<?php
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,7 +11,7 @@
 </head>
 <body>
 
-<?php include '../Navigation/Nav.php'?>
+<?php require_once 'Nav.php'; ?>
 
 <div class="text-container">
     <div class="text">
@@ -22,10 +25,10 @@
     </div>
 </div>
 
-<form method="post" action="login.php">
+<form method="post" action="../../../../HBO/WebTech/Fletnix/PHPFletnix/Fletnix/login.php">
     <div class="img-container">
         <div class="avatar">
-            <img src="Images/Homepage/Login/login3.jpg" alt="Image login">
+            <img src="Images/Homepage/Login/login1.jpg" alt="Image login">
         </div>
     </div>
 

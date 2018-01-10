@@ -22,7 +22,7 @@
     </style>
 </head>
 <body>
-<?php include '../Navigation/Nav.php'?>
+<?php include '../Navigation/Nav.php' ?>
 
 <div class="movie-trailer">
     <div class = "cover">

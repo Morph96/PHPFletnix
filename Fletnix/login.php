@@ -6,37 +6,40 @@
  * Time: 5:53 PM
  */
 
-include 'PDOverbinding.php';
+require 'PDOverbinding.php';
 
 $data = $dbh->query("SELECT customer_mail_address, password FROM customer");
 
-$emails = array();
-$passwords = array();
+$emails = [];
+$passwords = [];
+$passCorrect = false;
+$mailCorrect = false;
 
-
-//echo "<pre>";
-//print_r($data->fetchAll(PDO::FETCH_ASSOC));
 
 while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-    $emails[] .= "{$row['customer_mail_address']} &nbsp ";
-    $passwords[] .= "{$row['password']}<br>";
+    $emails[] = $row['customer_mail_address'];
+    $passwords[] = $row['password'];
 }
 
-
-$mailAddres = $_POST['mailaddres'];
+$mailAddres = $_POST['emailaddress'];
 $password = $_POST['password'];
 
-foreach($emails as $email) {
-if ($mailAddres[$i] == $emails) {
-    echo "Deze gebruiker staat wel in ons systeem";
-    header('location:http://localhost/PHPFletnix/Fletnix/filmoverzicht.php');
-    $ingelogd = true;
+$lengthArray = count($emails);
 
-} else {
-    echo "Het Email of wachtwoord klopt niet of staat niet in ons systeem";
-    header('location:http://localhost/PHPFletnix/Fletnix/loginscherm.php');
-    $ingelogd = false;
-};
+for ($i = 0; $i < $lengthArray; $i++) {
+    if ($mailAddres == $emails[$i] && $password == $passwords[$i]) {
+        $passCorrect = true;
+        $mailCorrect = true;
+    }
 }
 
-print_r($emails);
+if ($passCorrect == true && $mailCorrect == true) {
+    $_SESSION['user'] = $mailAddres;
+    $_SESSION['wachtwoord'] = $password;
+    $_SESSION['ingelogd'] = true;
+    header("location:http://localhost/PHPFletnix/Fletnix/filmoverzicht.php");
+} else {
+    session_unset();
+    session_destroy();
+    header("location:http://localhost/PHPFletnix/Fletnix/loginscherm.php");
+}

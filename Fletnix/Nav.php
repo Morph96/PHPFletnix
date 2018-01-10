@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: paulv
@@ -6,9 +7,9 @@
  * Time: 10:09 AM
  */
 
-include '../Fletnix/PDOverbinding.php';
+session_start();
 
-$ingelogd = null;
+require 'PDOverbinding.php';
 
 $data = $dbh->query("SELECT DISTINCT genre_name FROM Movie_Genre");
 //
@@ -23,10 +24,11 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
 
 
 ?>
+<html>
 
-<!--<head>-->
-<!--    <link type="text/css" rel="stylesheet" href="Nav.css">-->
-<!--</head>-->
+<head>
+    <link type="text/css" rel="stylesheet" href="CSS/Nav.css">
+</head>
 
 
 <div class="menu-containter">
@@ -36,27 +38,27 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
                 <button class="dropbtn">&#9776;
                     <i class="fa fa-caret-down"></i>
                 </button>
-                <!-- TOEGEVOEGD '..' OM NAAR ROOT TE GAAN-->
                 <div class="dropdown-content">
-                    <a href="../Fletnix/Index.php">Homepage</a>
-                    <a href="../Fletnix/filmoverzicht.php">Filmoverzicht</a>
-                    <a href="../HTML/about.html">Over ons</a>
-                    <a href="../HTML/abonnementen.html">Abonnementen</a>
+                    <a href="account.php" class="account">
+                        <?php if($_SESSION['ingelogd']) {
+                            echo $_SESSION['user'];
+                        } else {
+                            echo "My Account";}?></a>
+                    <hr>
+                    <a href="/Fletnix/Index.php">Homepage</a>
+                    <a href="/HTML/filmoverzicht.html">Filmoverzicht</a>
+                    <a href="/HTML/about.html">Over ons</a>
+                    <a href="/HTML/abonnementen.html">Abonnementen</a>
                     <hr/>
                     <ul>Genres
-                        <li><a href=../Fletnix/filmoverzicht.php></a><?= $genres ?></li>
+                        <li><a href=/HTML/filmoverzicht.html></a><?= $genres ?></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="user-container">
             <div class="logo">FletNix</div>
-            <?php IF($ingelogd) { ?>
-            <div class="gebruiker-img">
-            <img src="../Fletnix/Images/Homepage/Login/login1.jpg" alt="image">
-            <div class="gebruiker">USER</div>
-            <?php }; ?>
-            </div>
         </div>
     </div>
 </div>
+</html>
