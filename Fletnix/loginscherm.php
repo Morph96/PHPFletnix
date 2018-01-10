@@ -1,4 +1,10 @@
 <?php
+
+require_once 'Nav.php';
+require '../Footer/footer.php';
+
+if(!isset($_SESSION['user'])) {
+
 ?>
 
 <!DOCTYPE html>
@@ -10,8 +16,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-
-<?php require_once 'Nav.php'; ?>
 
 <div class="text-container">
     <div class="text">
@@ -25,7 +29,7 @@
     </div>
 </div>
 
-<form method="post" action="../../../../HBO/WebTech/Fletnix/PHPFletnix/Fletnix/login.php">
+<form method="post" action="login.php">
     <div class="img-container">
         <div class="avatar">
             <img src="Images/Homepage/Login/login1.jpg" alt="Image login">
@@ -38,7 +42,7 @@
         <label for="password"><b>Wachtwoord: </b></label>
         <input type="password" name="password" id="password" required><br>
         <button type="submit">Login</button>
-        <input type="checkbox" checked="checked"> Remember me
+        <input type="checkbox"> Remember me
     </div>
 
     <div class="container">
@@ -47,7 +51,18 @@
     </div>
 </form>
 
-<?php include '../Footer/footer.php'; ?>
+<div class="text-container">
+    <div class="text">
+        <div><p><a href="../HTML/abonnementen.html">Geen Account? Registreer Hier</a></p></div>
+    </div>
+</div>
+
 
 </body>
 </html>
+
+<?php }
+
+else {
+    header('location: filmoverzicht.php');
+}?>

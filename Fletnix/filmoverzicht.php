@@ -6,8 +6,8 @@
  * Time: 12:06 PM
  */
 
-include "../Navigation/Nav.php";
-include "PDOverbinding.php";
+require "Nav.php";
+require "PDOverbinding.php";
 
 
 ?>
@@ -58,7 +58,7 @@ include "PDOverbinding.php";
     </div>
 </div>
 
-<?php include '../Footer/footer.php';?>
+<?php require '../Footer/footer.php';?>
 
 </body>
 </html>

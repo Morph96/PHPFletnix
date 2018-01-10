@@ -12,9 +12,6 @@ session_start();
 require 'PDOverbinding.php';
 
 $data = $dbh->query("SELECT DISTINCT genre_name FROM Movie_Genre");
-//
-//echo "<pre>";
-//print_r($data->fetchAll(PDO::FETCH_BOTH));
 
 $genres = "";
 
@@ -24,7 +21,6 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
 
 
 ?>
-<html>
 
 <head>
     <link type="text/css" rel="stylesheet" href="CSS/Nav.css">
@@ -39,20 +35,23 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="account.php" class="account">
-                        <?php if($_SESSION['ingelogd']) {
-                            echo $_SESSION['user'];
-                        } else {
-                            echo "My Account";}?></a>
+                    <?php if (!isset($_SESSION['user'])) {
+                        echo "<a href='loginscherm.php'>Log in</a>";
+                    } else {
+                        echo "<a href='account.php'>{$_SESSION['user']}</a>";
+                        echo "<a href='logUit.php'>uitloggen</a>";
+                    } ?>
                     <hr>
-                    <a href="/Fletnix/Index.php">Homepage</a>
-                    <a href="/HTML/filmoverzicht.html">Filmoverzicht</a>
-                    <a href="/HTML/about.html">Over ons</a>
-                    <a href="/HTML/abonnementen.html">Abonnementen</a>
+                    <a href="../Fletnix/Index.php">Homepage</a>
+                    <a href="../Fletnix/filmoverzicht.php">Filmoverzicht</a>
+                    <a href="../Fletnix/about.php">Over ons</a>
+                    <a href="../Fletnix/abonnementen.php">Abonnementen</a>
                     <hr/>
-                    <ul>Genres
-                        <li><a href=/HTML/filmoverzicht.html></a><?= $genres ?></li>
-                    </ul>
+                    <?php if (isset($_SESSION['user'])) {
+                        echo "<ul>Genres";
+                        echo "<li><a href=/HTML/filmoverzicht.html><?= $genres ?></a></li>";
+                        echo "</ul>";
+                    } ?>
                 </div>
             </div>
         </div>
@@ -61,4 +60,3 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
         </div>
     </div>
 </div>
-</html>
