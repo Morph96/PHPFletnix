@@ -53,7 +53,7 @@ if(!isset($_SESSION['user'])) {
 
 <div class="text-container">
     <div class="text">
-        <div><p><a href="../HTML/abonnementen.html">Geen Account? Registreer Hier</a></p></div>
+        <div><p><a href="abonnementen.php">Geen Account? Registreer Hier</a></p></div>
     </div>
 </div>
 

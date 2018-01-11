@@ -8,17 +8,34 @@
  */
 
 session_start();
-
 require 'PDOverbinding.php';
+function alleGenres()
+{
+    $hostname = "localhost";
+    $dbname = "Fletnix_Docent";
+    $username = "sa";
+    $pw = "Mondena720@";
 
-$data = $dbh->query("SELECT DISTINCT genre_name FROM Movie_Genre");
+    try {
+        $dbh = new PDO("sqlsrv:Server=$hostname; Database=$dbname; ConnectionPooling=0",
+            "$username", "$pw");
 
-$genres = "";
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        echo "Er ging iets mis met de database. <br>";
+        echo "De melding is {$e->getMessage()} <br><br>";
+    }
 
-while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-    $genres .= "<li><a href='../HTML/filmoverzicht.php'>{$row[0]}</a></li>";
+    $data = $dbh->query("SELECT DISTINCT genre_name FROM Movie_Genre");
+
+    $genres = "";
+
+    while ($row = $data->fetch(PDO::FETCH_BOTH)) {
+        $genres .= "<li><a href='../HTML/filmoverzicht.php'>{$row[0]}</a></li>";
+    }
+
+    return $genres;
 }
-
 
 ?>
 
@@ -47,11 +64,11 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
                     <a href="../Fletnix/about.php">Over ons</a>
                     <a href="../Fletnix/abonnementen.php">Abonnementen</a>
                     <hr/>
-                    <?php if (isset($_SESSION['user'])) {
-                        echo "<ul>Genres";
-                        echo "<li><a href=/HTML/filmoverzicht.html><?= $genres ?></a></li>";
-                        echo "</ul>";
-                    } ?>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <ul>Genres
+                        <li><a href=../Fletnix/filmoverzicht.php><?= alleGenres() ?></a></li>
+                        </ul>
+                    <?php } ?>
                 </div>
             </div>
         </div>
