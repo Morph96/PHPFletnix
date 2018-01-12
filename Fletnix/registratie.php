@@ -22,7 +22,7 @@ $wachtwoord2 = $_GET['wachtwoord2'];
 $fletnixType = $_GET['fletnixtype'];
 $betalingsMethode = $_GET['betalingsmethode'];
 $startdate = date("Y-m-d");
-$geslacht = $_GET['geschlacht'];
+$geslacht = $_GET['geslacht'];
 
 
 if($wachtwoord != $wachtwoord2) {

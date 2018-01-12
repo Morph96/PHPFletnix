@@ -104,8 +104,8 @@ function alleBetalingsMethoden() {
     <input type="text" name="naam" id="naam" required><br>
     <label for="achternaam">Achternaam: </label>
     <input type="text" name="achternaam" id="achternaam" required><br>
-    <label for="geschlacht">geschlacht: </label>
-    <select name="geschlacht" id="geschlacht" required>
+    <label for="geslacht">geschlacht: </label>
+    <select name="geslacht" id="geslacht" required>
         <option value="F">Vrouw</option>
         <option value="M">Man</option>
     </select>

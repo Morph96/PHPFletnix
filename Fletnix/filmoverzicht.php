@@ -9,8 +9,11 @@
 require "Nav.php";
 require "PDOverbinding.php";
 
-
+if (!isset($_SESSION['user'])) {
+    header('Location: loginscherm.php');
+} else {
 ?>
+
 
 <!DOCTYPE html>
 <html lang="nl">
@@ -62,3 +65,4 @@ require "PDOverbinding.php";
 
 </body>
 </html>
+<?php } ?>
