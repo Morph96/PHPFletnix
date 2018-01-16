@@ -8,8 +8,7 @@ function alleLanden() {
     $hostname = "localhost";
     $dbname = "Fletnix_Docent";
     $username = "sa";
-    $pw = "Paulserver";
-
+    $pw = "M0rt3n1996!";
     try {
         $dbh = new PDO("sqlsrv:Server=$hostname; Database=$dbname; ConnectionPooling=0",
             "$username", "$pw");
@@ -33,7 +32,7 @@ function alleContracten() {
     $hostname = "localhost";
     $dbname = "Fletnix_Docent";
     $username = "sa";
-    $pw = "Paulserver";
+    $pw = "M0rt3n1996!";
 
     try {
         $dbh = new PDO("sqlsrv:Server=$hostname; Database=$dbname; ConnectionPooling=0",
@@ -59,7 +58,7 @@ function alleBetalingsMethoden() {
     $hostname = "localhost";
     $dbname = "Fletnix_Docent";
     $username = "sa";
-    $pw = "Paulserver";
+    $pw = "M0rt3n1996!";
 
     try {
         $dbh = new PDO("sqlsrv:Server=$hostname; Database=$dbname; ConnectionPooling=0",

@@ -31,20 +31,11 @@ if(!isset($_SESSION['user'])) {
     <div class = "cover">
         <img src = "./Images/doctorstrange.jpg">
         <div class = "info">
-            <h1> Doctor Strange </h1>
-
                 <?php
-
-
-
                     $data = $dbh -> query("SELECT description FROM Movie WHERE movie_id = 313479 ");
                     while($row = $data->fetch()){
                         echo "$row[0]";
                     }
-
-
-
-
                 ?>
 
 

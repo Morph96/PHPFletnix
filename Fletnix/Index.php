@@ -30,13 +30,14 @@ if (!isset($_SESSION['user'])) {
         <div class="welkom"><h1>Welkom bij FLETNIX</h1></div>
     </div>
 </div>
+<?php require 'login_fotos.php'; ?>
 <div class="text-container">
     <div class="text">
         <div><p>Kies een Gebruiker of maak een account aan</p></div>
     </div>
 </div>
 
-<?php require 'login_fotos.php'; ?>
+
 
 </body>
 </html>

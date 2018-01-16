@@ -318,27 +318,37 @@ select {
 
 
 /*Header container*/
-.header-container {
-    color: #5995DA;
-    background-color: #555854;
+/*.header-container {*/
+    /*color: #5995DA;*/
+    /*background-color: #555854;*/
+    /*display: flex;*/
+    /*justify-content: flex-start;*/
+/*}*/
+
+
+/*.header {*/
+    /*margin-top: 20px;*/
+    /*width: 1300px;*/
+    /*height: 1000px;*/
+    /*display: flex;*/
+    /*align-items: flex-start;*/
+    /*flex-direction: column;*/
+/*}*/
+
+/*.header img{*/
+    /*margin: 5px;*/
+    /*width: 250px;*/
+    /*height: 150px;*/
+/*}*/
+
+.items {
     display: flex;
-    justify-content: flex-start;
+    justify-content:space-around;
+    flex-wrap: wrap;
 }
 
-
-.header {
-    margin-top: 20px;
-    width: 1300px;
-    height: 1000px;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: column;
-}
-
-.header img{
-    margin: 5px;
-    width: 250px;
-    height: 150px;
+.items img {
+    padding-bottom: 10px;
 }
 
 

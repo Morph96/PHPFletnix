@@ -8,7 +8,7 @@
 
 session_start();
 
-require_once 'PDOverbinding.php';
+require 'PDOverbinding.php';
 
 $naam = $_GET['naam'];
 $achternaam = $_GET['achternaam'];
@@ -29,7 +29,7 @@ if($wachtwoord != $wachtwoord2) {
     header("location:abonnementen.php");
 } else {
     $registratieInsert =  "INSERT INTO Customer VALUES 
-    (:customer_mail_address, :lastname, :firstname, :payment_method, :payment_card_number, :contract_type, :subscription_start, :subscription_end, :user_name, :password, :country_name, :gender, :birth_date)";
+(:customer_mail_address, :lastname, :firstname, :payment_method, :payment_card_number, :contract_type, :subscription_start, :subscription_end, :user_name, :password, :country_name, :gender, :birth_date)";
     $query = $dbh->prepare($registratieInsert);
 
 

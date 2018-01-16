@@ -14,7 +14,7 @@ function alleGenres()
     $hostname = "localhost";
     $dbname = "Fletnix_Docent";
     $username = "sa";
-    $pw = "Paulserver";
+    $pw = "M0rt3n1996!";
 
     try {
         $dbh = new PDO("sqlsrv:Server=$hostname; Database=$dbname; ConnectionPooling=0",

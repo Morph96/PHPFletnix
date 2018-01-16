@@ -7,4 +7,6 @@
  */
 ?>
 
+<div class = "copyright_container">
 <div class="copyright"><p>Copyright by Paul/Morten Productions</p></div>
+</div>
