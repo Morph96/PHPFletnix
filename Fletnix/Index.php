@@ -7,7 +7,14 @@
  */
 
 
-$_SESSION['ingelogd'] = false;
+require 'Nav.php';
+require '../Footer/footer.php';
+
+
+
+if (!isset($_SESSION['user'])) {
+    header('Location: loginscherm.php');
+} else {
 ?>
 
 <!DOCTYPE html>
@@ -16,34 +23,22 @@ $_SESSION['ingelogd'] = false;
     <meta charset="UTF-8">
     <title>FletNix - Paul van Mierle/Morten Pietersma</title>
     <link type="text/css" rel="stylesheet" href="CSS/CSSglobal.css">
-
 </head>
 <body>
-
-<?php require_once 'Nav.php'; ?>
-
 <div class="text-container">
     <div class="text">
         <div class="welkom"><h1>Welkom bij FLETNIX</h1></div>
     </div>
 </div>
-
 <div class="text-container">
     <div class="text">
         <div><p>Kies een Gebruiker of maak een account aan</p></div>
     </div>
 </div>
 
-<?php require 'login_fotos.php';?>
-
-<div class="text-container">
-    <div class="text">
-        <div><p><a href="../HTML/abonnementen.html">Geen Account? Registreer Hier</a></p></div>
-    </div>
-</div>
-
-<?php include '../Footer/footer.php';?>
+<?php require 'login_fotos.php'; ?>
 
 </body>
 </html>
 
+<?php } ?>

@@ -5,6 +5,10 @@
  * Date: 1/9/2018
  * Time: 01:12 AM
  */
+session_start();
+if(!isset($_SESSION['user'])) {
+    session_destroy();
+}
 
     require 'PDOverbinding.php'
 
@@ -21,7 +25,7 @@
     </style>
 </head>
 <body>
-<?php include '../Navigation/Nav.php' ?>
+<?php require 'Nav.php' ?>
 
 <div class="movie-trailer">
     <div class = "cover">

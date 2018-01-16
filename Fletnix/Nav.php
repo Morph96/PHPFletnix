@@ -8,23 +8,36 @@
  */
 
 session_start();
-
 require 'PDOverbinding.php';
+function alleGenres()
+{
+    $hostname = "localhost";
+    $dbname = "Fletnix_Docent";
+    $username = "sa";
+    $pw = "Paulserver";
 
-$data = $dbh->query("SELECT DISTINCT genre_name FROM Movie_Genre");
-//
-//echo "<pre>";
-//print_r($data->fetchAll(PDO::FETCH_BOTH));
+    try {
+        $dbh = new PDO("sqlsrv:Server=$hostname; Database=$dbname; ConnectionPooling=0",
+            "$username", "$pw");
 
-$genres = "";
+        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    } catch (PDOException $e) {
+        echo "Er ging iets mis met de database. <br>";
+        echo "De melding is {$e->getMessage()} <br><br>";
+    }
 
-while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-    $genres .= "<li><a href='../HTML/filmoverzicht.php'>{$row[0]}</a></li>";
+    $data = $dbh->query("SELECT DISTINCT genre_name FROM Movie_Genre");
+
+    $genres = "";
+
+    while ($row = $data->fetch(PDO::FETCH_BOTH)) {
+        $genres .= "<li><a href='../HTML/filmoverzicht.php'>{$row[0]}</a></li>";
+    }
+
+    return $genres;
 }
 
-
 ?>
-<html>
 
 <head>
     <link type="text/css" rel="stylesheet" href="CSS/Nav.css">
@@ -39,20 +52,23 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
                     <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
-                    <a href="account.php" class="account">
-                        <?php if($_SESSION['ingelogd']) {
-                            echo $_SESSION['user'];
-                        } else {
-                            echo "My Account";}?></a>
+                    <?php if (!isset($_SESSION['user'])) {
+                        echo "<a href='loginscherm.php'>Log in</a>";
+                    } else {
+                        echo "<a href='account.php'>{$_SESSION['user']}</a>";
+                        echo "<a href='logUit.php'>uitloggen</a>";
+                    } ?>
                     <hr>
                     <a href="../Fletnix/Index.php">Homepage</a>
                     <a href="../Fletnix/filmoverzicht.php">Filmoverzicht</a>
-                    <a href="../HTML/about.html">Over ons</a>
-                    <a href="../HTML/abonnementen.html">Abonnementen</a>
+                    <a href="../Fletnix/about.php">Over ons</a>
+                    <a href="../Fletnix/abonnementen.php">Abonnementen</a>
                     <hr/>
-                    <ul>Genres
-                        <li><a href=/HTML/filmoverzicht.html></a><?= $genres ?></li>
-                    </ul>
+                    <?php if (isset($_SESSION['user'])) { ?>
+                        <ul>Genres
+                        <li><a href=../Fletnix/filmoverzicht.php><?= alleGenres() ?></a></li>
+                        </ul>
+                    <?php } ?>
                 </div>
             </div>
         </div>
@@ -61,4 +77,3 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
         </div>
     </div>
 </div>
-</html>
