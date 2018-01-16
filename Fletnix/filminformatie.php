@@ -20,7 +20,7 @@ if(!isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <title>FletNix - Paul van Mierle/Morten Pietersma</title>
-    <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/CSSglobal.css">
+    <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/Global_styleSheet.css">
     <style>
 
     </style>
@@ -47,7 +47,7 @@ if(!isset($_SESSION['user'])) {
     </div>
 </div>
 
-<div class="copyright"><p>Copyright by Paul/Morten Productions</p></div>
+<?php require '../Footer/footer.php'; ?>
 
 </body>
 </html>

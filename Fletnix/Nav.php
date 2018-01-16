@@ -9,33 +9,7 @@
 
 session_start();
 require 'PDOverbinding.php';
-function alleGenres()
-{
-    $hostname = "localhost";
-    $dbname = "Fletnix_Docent";
-    $username = "sa";
-    $pw = "Paulserver";
-
-    try {
-        $dbh = new PDO("sqlsrv:Server=$hostname; Database=$dbname; ConnectionPooling=0",
-            "$username", "$pw");
-
-        $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    } catch (PDOException $e) {
-        echo "Er ging iets mis met de database. <br>";
-        echo "De melding is {$e->getMessage()} <br><br>";
-    }
-
-    $data = $dbh->query("SELECT DISTINCT genre_name FROM Movie_Genre");
-
-    $genres = "";
-
-    while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $genres .= "<li><a href='../HTML/filmoverzicht.php'>{$row[0]}</a></li>";
-    }
-
-    return $genres;
-}
+require 'functions.php';
 
 ?>
 
@@ -65,14 +39,20 @@ function alleGenres()
                     <a href="../Fletnix/abonnementen.php">Abonnementen</a>
                     <hr/>
                     <?php if (isset($_SESSION['user'])) { ?>
+                        <div class="search-container">
+                            <form method="get" action="search.php">
+                                <input type="text" placeholder="Search.." name="search">
+                                <button type="submit">Submit</button>
+                            </form>
+                        </div>
                         <ul>Genres
-                        <li><a href=../Fletnix/filmoverzicht.php><?= alleGenres() ?></a></li>
+                            <li><?= alleGenres() ?></li>
                         </ul>
                     <?php } ?>
                 </div>
             </div>
         </div>
-        <div class="user-container">
+        <div>
             <div class="logo">FletNix</div>
         </div>
     </div>
