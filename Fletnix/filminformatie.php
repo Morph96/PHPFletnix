@@ -6,8 +6,7 @@
  * Time: 01:12 AM
  */
 
-    $film_beschrijving[] = "";
-    $film_cover .= "";
+    require 'PDOverbinding.php'
 
 ?>
 
@@ -29,10 +28,23 @@
         <img src = "./Images/doctorstrange.jpg">
         <div class = "info">
             <h1> Doctor Strange </h1>
-            <p> Marvel's "Doctor Strange" follows the story of the talented neurosurgeon Doctor Stephen Strange who, after a tragic car accident, <br>
-                must put ego aside and learn the secrets of a hidden world of mysticism and alternate dimensions. Based in New York City's Greenwich Village,<br>
-                Doctor Strange must act as an intermediary between the real world and what lies beyond, utilising a vast array of metaphysical abilities<br>
-                and artifacts to protect the Marvel Cinematic Universe.</p>
+
+                <?php
+
+
+
+                    $data = $dbh -> query("SELECT description FROM Movie WHERE movie_id = 313479 ");
+                    while($row = $data->fetch()){
+                        echo "$row[0]";
+                    }
+
+
+
+
+                ?>
+
+
+
 
         </div>
     </div>
@@ -42,6 +54,7 @@
         </video>
     </div>
 </div>
+
 
 <div class="copyright"><p>Copyright by Paul/Morten Productions</p></div>
 

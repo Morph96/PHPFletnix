@@ -45,10 +45,10 @@ while ($row = $data->fetch(PDO::FETCH_BOTH)) {
                         } else {
                             echo "My Account";}?></a>
                     <hr>
-                    <a href="/Fletnix/Index.php">Homepage</a>
-                    <a href="/HTML/filmoverzicht.html">Filmoverzicht</a>
-                    <a href="/HTML/about.html">Over ons</a>
-                    <a href="/HTML/abonnementen.html">Abonnementen</a>
+                    <a href="../Fletnix/Index.php">Homepage</a>
+                    <a href="../Fletnix/filmoverzicht.php">Filmoverzicht</a>
+                    <a href="../HTML/about.html">Over ons</a>
+                    <a href="../HTML/abonnementen.html">Abonnementen</a>
                     <hr/>
                     <ul>Genres
                         <li><a href=/HTML/filmoverzicht.html></a><?= $genres ?></li>
