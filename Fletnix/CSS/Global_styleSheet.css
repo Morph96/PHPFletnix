@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    color: white;
+    background-color: #555854;
+}
+
+a{
+    color: white;
+    text-decoration: none;
+}
+
+/*
+Abonnementen Pagina CSS
+ */
+
+.abonnementen-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.abonnement {
+    display: flex;
+}
+
+.abonnement1 {
+    width: 40%;
+    padding-top: 20px;
+    margin: 20px 20px;
+    height: auto;
+    border: 1px solid lightgray;
+    color: black;
+    background-color: lightgray;
+    border-radius: 20px;
+    text-align: center;
+    justify-content: center;
+
+}
+
+.abonnement1-top {
+    display: flex;
+    margin: 20px 20px;
+    justify-content: center;
+}
+.abonnement1 em{
+    color: dodgerblue;
+    font-size: 20px;
+}
+
+.abonnement1 strong {
+    color: red;
+    font-size: 28px;
+}
+
+.abonnement1 p {
+    font-size: 18px;
+}
+
+/*
+Registratie Form
+ */
+.registratieForm {
+    display: flex;
+    justify-content: center;
+
+}
+
+.registratieForm form {
+    width: 30%;
+}
+
+.registratieForm select[name], input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.registratieForm button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+/*
+Filmoverzicht Pagina CSS
+ */
+.items {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.items img {
+    padding: 5px 5px;
+}
+
+
+/*
+Search pagina CSS
+ */
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+}
+.results-container h1 {
+    margin: 20px auto;
+}
+.results {
+    display: flex;
+    justify-content: center;
+}
+
+/*
+Index pagina CSS
+ */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.login {
+    display: flex;
+    height: 220px;
+    margin: 50px auto 50px auto;
+}
+
+.login img {
+    margin: 20px 20px 20px 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+}
+
+
+/*
+Loginscherm Pagina CSS code
+ */
+.loginform {
+    display: flex;
+    justify-content: center;
+}
+.loginform form {
+    width: 30em;
+    background-color: #555854;
+    opacity: 1;
+}
+
+.loginform input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.loginform button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.loginform button:hover {
+    opacity: 0.8;
+}
+
+.loginform .cancelbtn {
+    width: auto;
+    padding: 10px 18px;
+    background-color: #f44336;
+}
+.loginform .img-container {
+    text-align: center;
+}
+
+.loginform .avatar {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    padding-top: 10px;
+}
+
+.loginform .avatar img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.loginform .container {
+    padding: 16px;
+}
+
+/*Text container*/
+.text-container {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    align-items: flex-end;
+    margin: 20px 20px 20px 20px;
+}
+
+/*Copyright onder aan pagina*/
+.copyright {
+    background-color: #1A1C1A;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+    width: 100%;
+    overflow:hidden;
+    text-align: right;
+}
+
+/*text Spacing*/
+.spacing {
+    margin: 20px 20px;
+}
+
+/*text decoratie*/
+.decoration {
+    border-top: 1px solid black;
+}
+

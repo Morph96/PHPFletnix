@@ -8,7 +8,6 @@
 
 
 require 'Nav.php';
-require '../Footer/footer.php';
 
 $huidigeDatum = date("D M Y");
 $inlogtijd = date("h i A", $_SESSION['inlogtijd'])
@@ -19,7 +18,7 @@ $inlogtijd = date("h i A", $_SESSION['inlogtijd'])
 <head>
     <meta charset="UTF-8">
     <title>FletNix - Paul van Mierle/Morten Pietersma</title>
-    <link type="text/css" rel="stylesheet" href="CSS/CSSglobal.css">
+    <link type="text/css" rel="stylesheet" href="CSS/Global_styleSheet.css">
 </head>
 
 
@@ -35,6 +34,9 @@ $inlogtijd = date("h i A", $_SESSION['inlogtijd'])
         <div><?php echo "<p>De huidige datum is: {$huidigeDatum}, En je bent ingelogd op: {$inlogtijd}</p>"; ?></div>
     </div>
 </div>
+
+<?php require '../Footer/footer.php'; ?>
+
 </body>
 
 </html>

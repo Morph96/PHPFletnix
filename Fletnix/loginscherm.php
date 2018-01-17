@@ -1,7 +1,6 @@
 <?php
 
 require_once 'Nav.php';
-require '../Footer/footer.php';
 
 if(!isset($_SESSION['user'])) {
 
@@ -12,7 +11,7 @@ if(!isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <title>Login screen</title>
-    <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/CSSglobal.css">
+    <link type="text/css" rel="stylesheet" href="CSS/Global_styleSheet.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -28,7 +27,7 @@ if(!isset($_SESSION['user'])) {
         <div><p>Log nu in om verder te gaan met uw kijk plezier</p></div>
     </div>
 </div>
-
+<div class="loginform">
 <form method="post" action="login.php">
     <div class="img-container">
         <div class="avatar">
@@ -40,7 +39,7 @@ if(!isset($_SESSION['user'])) {
         <label for="emailaddress"><b>Emailaddres: </b></label>
         <input type="text" name="emailaddress" id="emailaddress" required><br>
         <label for="password"><b>Wachtwoord: </b></label>
-        <input type="password" name="password" id="password" required><br>
+        <input type="password" name="password" id="password" required ><br>
         <button type="submit">Login</button>
         <input type="checkbox"> Remember me
     </div>
@@ -50,13 +49,15 @@ if(!isset($_SESSION['user'])) {
         <span class="psw"> <a href="#">Forgot password?</a></span>
     </div>
 </form>
+</div>
 
 <div class="text-container">
-    <div class="text">
-        <div><p><a href="abonnementen.php">Geen Account? Registreer Hier</a></p></div>
+        <div class="text">
+        <div class=""><p><a href="abonnementen.php">Geen Account? Registreer Hier</a></p></div>
     </div>
 </div>
 
+<?php require '../Footer/footer.php'; ?>
 
 </body>
 </html>

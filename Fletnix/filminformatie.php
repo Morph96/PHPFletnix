@@ -10,7 +10,8 @@ if(!isset($_SESSION['user'])) {
     session_destroy();
 }
 
-    require 'PDOverbinding.php'
+    $film_beschrijving[] = "";
+    $film_cover .= "";
 
 ?>
 
@@ -19,7 +20,7 @@ if(!isset($_SESSION['user'])) {
 <head>
     <meta charset="UTF-8">
     <title>FletNix - Paul van Mierle/Morten Pietersma</title>
-    <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/CSSglobal.css">
+    <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/Global_styleSheet.css">
     <style>
 
     </style>
@@ -31,15 +32,11 @@ if(!isset($_SESSION['user'])) {
     <div class = "cover">
         <img src = "./Images/doctorstrange.jpg">
         <div class = "info">
-                <?php
-                    $data = $dbh -> query("SELECT description FROM Movie WHERE movie_id = 313479 ");
-                    while($row = $data->fetch()){
-                        echo "$row[0]";
-                    }
-                ?>
-
-
-
+            <h1> Doctor Strange </h1>
+            <p> Marvel's "Doctor Strange" follows the story of the talented neurosurgeon Doctor Stephen Strange who, after a tragic car accident, <br>
+                must put ego aside and learn the secrets of a hidden world of mysticism and alternate dimensions. Based in New York City's Greenwich Village,<br>
+                Doctor Strange must act as an intermediary between the real world and what lies beyond, utilising a vast array of metaphysical abilities<br>
+                and artifacts to protect the Marvel Cinematic Universe.</p>
 
         </div>
     </div>
@@ -50,8 +47,7 @@ if(!isset($_SESSION['user'])) {
     </div>
 </div>
 
-
-<div class="copyright"><p>Copyright by Paul/Morten Productions</p></div>
+<?php require '../Footer/footer.php'; ?>
 
 </body>
 </html>
