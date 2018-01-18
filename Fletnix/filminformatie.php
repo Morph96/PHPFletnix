@@ -5,13 +5,6 @@
  * Date: 1/9/2018
  * Time: 01:12 AM
  */
-session_start();
-if(!isset($_SESSION['user'])) {
-    session_destroy();
-}
-
-    $film_beschrijving[] = "";
-    $film_cover .= "";
 
 ?>
 
@@ -26,26 +19,76 @@ if(!isset($_SESSION['user'])) {
     </style>
 </head>
 <body>
-<?php require 'Nav.php' ?>
+<?php require 'Nav.php' ;
+        require 'PDOverbinding.php';
+?>
 
-<div class="movie-trailer">
-    <div class = "cover">
-        <img src = "./Images/doctorstrange.jpg">
-        <div class = "info">
-            <h1> Doctor Strange </h1>
-            <p> Marvel's "Doctor Strange" follows the story of the talented neurosurgeon Doctor Stephen Strange who, after a tragic car accident, <br>
-                must put ego aside and learn the secrets of a hidden world of mysticism and alternate dimensions. Based in New York City's Greenwich Village,<br>
-                Doctor Strange must act as an intermediary between the real world and what lies beyond, utilising a vast array of metaphysical abilities<br>
-                and artifacts to protect the Marvel Cinematic Universe.</p>
 
-        </div>
-    </div>
+<?php
+
+$movieID = $_GET['movie_id'];
+global $dbh;
+$description = "";
+$trailer = "";
+$image = "";
+$title = "";
+
+$data = $dbh->query("SELECT title, description, cover_image, URL FROM Movie WHERE movie_id = $movieID");
+while($row = $data->fetch()){
+    $description .= $row['description'];
+    $trailer .= $row['URL'];
+    $image .= $row['cover_image'];
+    $title .= $row['title'];
+}
+
+//$data = $dbh-> query("SELECT P.firstname, P.lastname, MC.role FROM Movie_Cast MC
+//                      INNER JOIN Movie M ON MC.movie_id = M.movie_id
+//                      INNER JOIN Person P ON MC.person_id = P.person_id
+//                      WHERE M.movie_id = $movieID");
+//echo "<table border = '10'>";
+//echo "<tr><td> Firstname </td><td> Lastname </td><td> Role </td></tr>";
+//
+//while($row = $data->fetch(PDO::FETCH_BOTH))
+//{
+//    echo "<tr><td>{$row['firstname']}</td><td>{$row['lastname']} </td><td></td></tr>";
+//}
+//echo "</table>";
+
+
+
+?>
+
+
+<div class="movie_trailer">
     <div class="trailer">
-        <video controls preload>
-            <source src = "../Fletnix/Trailers/DOCTOR_STRANGE_Official_Trailer_(Marvel_-_2016_).mp4">
-        </video>
+            <div class="imageDescription">
+                <img src="<?php echo $image ?>">
+                    <div class="Cast">
+                        <h2><?php echo $title ?></h2>
+                        <p><?php echo $description ?></p>
+                    </div>
+            </div>
+        <iframe width="560" height="315" src="<?php echo $trailer ?>" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
     </div>
 </div>
+
+<div class="Actors">
+    <?php $data = $dbh-> query("SELECT P.firstname, P.lastname, MC.role FROM Movie_Cast MC 
+                      INNER JOIN Movie M ON MC.movie_id = M.movie_id
+                      INNER JOIN Person P ON MC.person_id = P.person_id
+                      WHERE M.movie_id = $movieID");
+    echo "<table border = '10'>";
+    echo "<tr><td> Firstname </td><td> Lastname </td><td> Role </td></tr>";
+
+    while($row = $data->fetch(PDO::FETCH_BOTH))
+    {
+        echo "<tr><td>{$row['firstname']}</td><td>{$row['lastname']} </td><td>{$row['role']}</td></tr>";
+    }
+    echo "</table>"; ?>
+
+
+</div>
+
 
 <?php require '../Footer/footer.php'; ?>
 

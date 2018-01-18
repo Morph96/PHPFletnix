@@ -51,16 +51,19 @@ function alleBetalingsMethoden()
 
 function movies()
 {
+
     global $dbh;
 
     $movie = "";
 
-    $data = $dbh->query("SELECT * FROM Movie WHERE cover_image IS NOT NULL ");
+    $data = $dbh->query("SELECT cover_image, movie_id FROM Movie WHERE cover_image IS NOT NULL ");
+
 
     while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $movie .= "<a href='../HTML/filminformatie.php'><img src= '{$row['cover_image']}'></a>";
+        $movie .= "<a href='../Fletnix/filminformatie.php?movie_id={$row['movie_id']}'><img src= '{$row['cover_image']}' name='{$row['movie_id']}'></a>";
     }
     return $movie;
+
 }
 
 function login()
@@ -105,7 +108,7 @@ function alleGenres()
     $genres = "";
 
     while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $genres .= "<li><a href='../Fletnix/filmoverzicht.php'>{$row['genre_name']}</a></li>";
+        $genres .= "<li><a href='../Fletnix/filmoverzicht.php?genre_name={$row['genre_name']}'>{$row['genre_name']}</a></li>";
     }
 
     return $genres;
@@ -119,10 +122,27 @@ function searchResult()
     $results = "";
 
     while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $results .= "<a class='spacing' style='width: 15%' href='../HTML/filminformatie.php'><img src= '{$row['cover_image']}'>
+        $results .= "<a class='spacing' style='width: 15%' href='../Fletnix/filminformatie.php?movie_id={$row['movie_id']}''><img src= '{$row['cover_image']}' name='{$row['movie_id']} '>
                      <p>{$row['title']}</p></a>";
     }
 
     return $results;
 
 }
+
+function showResult()
+{
+
+    $result = $_GET['genre_name'];
+    $overzicht = "";
+    global $dbh;
+    $data = $dbh ->query("SELECT movie_id FROM Movie_Genre WHERE genre_name = $result");
+    while ($row = $data->fetch(PDO::FETCH_BOTH)){
+
+        $overzicht .= "{$row['movie_id']}";
+     }
+    return $overzicht;
+
+}
+
+?>
