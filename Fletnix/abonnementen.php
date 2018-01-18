@@ -26,7 +26,7 @@ require 'abonnementenPrijzen.php';
         <input type="text" name="naam" id="naam" required><br>
         <label for="achternaam">Achternaam: </label>
         <input type="text" name="achternaam" id="achternaam" required><br>
-        <label for="geslacht">geschlacht: </label>
+        <label for="geslacht">geslacht: </label>
         <select name="geslacht" id="geslacht" required>
             <option value="F">Vrouw</option>
             <option value="M">Man</option>
@@ -45,9 +45,9 @@ require 'abonnementenPrijzen.php';
             <label for="username">Username: </label>
             <input type="text" name="username" id="username" required><br>
             <label for="wachtwoord">Wachtwoord: </label>
-            <input type="text" name="wachtwoord" id="wachtwoord" required><br>
+            <input type="password" name="wachtwoord" id="wachtwoord" required><br>
             <label for="wachtwoord2">Wachtwoord Check: </label>
-            <input type="text" name="wachtwoord2" id="wachtwoord2" required><br>
+            <input type="password" name="wachtwoord2" id="wachtwoord2" required><br>
             <label for="fletnixtype">FletNix type: </label>
             <select name="fletnixtype" id="fletnixtype" required>
                 <option value="">....</option>

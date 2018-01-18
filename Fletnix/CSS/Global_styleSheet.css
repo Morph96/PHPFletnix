@@ -232,6 +232,14 @@ Loginscherm Pagina CSS code
     text-align: right;
 }
 
+fixed {
+    background-color: #1A1C1A;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 40px;
+}
 /*text Spacing*/
 .spacing {
     margin: 20px 20px;
