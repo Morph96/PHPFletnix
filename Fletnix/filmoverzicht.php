@@ -21,11 +21,16 @@ if (!isset($_SESSION['user'])) {
         <title>FletNix - Paul van Mierle/Morten Pietersma</title>
         <link type="text/css" rel="stylesheet" href="CSS/Global_styleSheet.css">
     </head>
-    <body>
 
+    <body>
+    <form method="get">
     <div class="items">
-        <?= movies() ?>
+        <?=
+            movies() ;
+        ?>
+
     </div>
+    </form>
     <?php require '../Footer/footer.php'; ?>
     </body>
     </html>

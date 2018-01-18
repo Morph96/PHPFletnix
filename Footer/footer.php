@@ -7,4 +7,4 @@
  */
 ?>
 
-<p class="copyright">Paul/Morten Productions &copy; </p>
+<p class="copyright">&copy; Paul/Morten Productions  </p>

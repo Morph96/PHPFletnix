@@ -220,16 +220,15 @@ Loginscherm Pagina CSS code
 }
 
 /*Copyright onder aan pagina*/
+
 .copyright {
     background-color: #1A1C1A;
-    position: relative;
-    left: 0;
-    bottom: 0;
+    position: fixed;
     right: 0;
-    height: 40px;
-    width: 100%;
-    overflow:hidden;
-    text-align: right;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: left;
 }
 
 fixed {
@@ -250,3 +249,52 @@ fixed {
     border-top: 1px solid black;
 }
 
+.movie_trailer{
+    margin-top: 25px;
+}
+
+.trailer {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: blue;
+}
+
+.trailer img{
+
+    align-content: center;
+
+    border: 10px solid red;
+}
+
+.imageDescription
+{
+    display: flex;
+}
+
+.imageDescription h1 {
+    margin: auto 20px;
+}
+
+.Cast
+{
+    display: flex;
+    flex-direction: column;
+    margin: 25px;
+}
+
+.Cast p {
+    margin: 25px;
+}
+
+
+.trailer iframe{
+    display: flex;
+    justify-content: right;
+    align-self: right;
+    background-color: red;
+
+}
