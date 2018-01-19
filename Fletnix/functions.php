@@ -77,9 +77,9 @@ function login()
         $passwords[] = $row['password'];
     }
 
-    $lengthArray = count($emails);
+    $lengteArray = count($emails);
 
-    for ($i = 0; $i < $lengthArray; $i++) {
+    for ($i = 0; $i < $lengteArray; $i++) {
         if ($mailAddres == $emails[$i] && $password == $passwords[$i]) {
             $passCorrect = true;
             $mailCorrect = true;
