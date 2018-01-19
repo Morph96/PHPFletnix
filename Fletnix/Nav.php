@@ -28,7 +28,6 @@ if (isset($_SESSION['user'])) {
         <div class="navbar">
             <div class="dropdown">
                 <button class="dropbtn">&#9776;
-                    <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
                     <?php if (!isset($_SESSION['user'])) {
