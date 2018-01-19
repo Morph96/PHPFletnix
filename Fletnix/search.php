@@ -20,7 +20,7 @@ $search = $_GET['search'];
 <div class="results-container">
     <h1>Dit zijn uw zoek resultaten voor "<?= $search ?>":</h1>
     <div class="results">
-        <?= searchResult(); ?>
+        <?= zoekResultaat(); ?>
     </div>
 </div>
 

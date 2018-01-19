@@ -114,7 +114,7 @@ function alleGenres()
 
 }
 
-function searchResult()
+function zoekResultaat()
 {
     global $dbh, $search;
     $data = $dbh->query("SELECT * FROM Movie WHERE title LIKE '%{$search}%' AND cover_image IS NOT  NULL ");
@@ -130,18 +130,20 @@ function searchResult()
 
 }
 
-function showResult()
+function zoekenOpGenre()
 {
 
-    $result = $_GET['genre_name'];
-    $overzicht = "";
-    global $dbh;
-    $data = $dbh ->query("SELECT movie_id FROM Movie_Genre WHERE genre_name = $result");
-    while ($row = $data->fetch(PDO::FETCH_BOTH)){
+    global $dbh, $zoekGenres;
+    $data = $dbh->query("SELECT M.title, M.cover_image, M.movie_id FROM Movie_genre MG JOIN Movie M ON MG.movie_id = M.movie_id WHERE MG.genre_name LIKE '%{$zoekGenres}%' AND M.cover_image IS NOT NULL");
 
-        $overzicht .= "{$row['movie_id']}";
-     }
-    return $overzicht;
+    $results = "";
+
+    while ($row = $data->fetch(PDO::FETCH_BOTH)) {
+        $results .= "<a class='spacing' href='../Fletnix/filminformatie.php?movie_id={$row['movie_id']}''><img src= '{$row['cover_image']}' name='{$row['movie_id']} '>
+                     <p>{$row['title']}</p></a>";
+    }
+
+    return $results;
 
 }
 
