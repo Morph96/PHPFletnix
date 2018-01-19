@@ -11,6 +11,11 @@ session_start();
 require 'PDOverbinding.php';
 require 'functions.php';
 
+if (isset($_SESSION['user'])) {
+    $huidigeDatum = date("D M Y");
+    $inlogtijd = date("h i A", $_SESSION['inlogtijd']);
+}
+
 ?>
 
 <head>
@@ -29,7 +34,7 @@ require 'functions.php';
                     <?php if (!isset($_SESSION['user'])) {
                         echo "<a href='loginscherm.php'>Log in</a>";
                     } else {
-                        echo "<a href='account.php'>{$_SESSION['user']}</a>";
+                        echo "<h3>{$_SESSION['user']}</h3>";
                         echo "<a href='logUit.php'>uitloggen</a>";
                     } ?>
                     <hr>
@@ -42,8 +47,8 @@ require 'functions.php';
                         <div class="search-container">
                             <form method="get" action="search.php">
                                 <div class="inline">
-                                <label for="zoekTitle">Zoeken op Titel:</label>
-                                <input type="text" placeholder="Titel..." name="search">
+                                    <label for="zoekTitle">Zoeken op Titel:</label>
+                                    <input type="text" placeholder="Titel..." name="search">
                                 </div>
                                 <button type="submit">Zoek op Titel</button>
                             </form>
@@ -52,10 +57,10 @@ require 'functions.php';
                         <div class="genreSelectie">
                             <form method="get" action="genres.php">
                                 <div class="inline">
-                                <label for="genres">Genres:</label>
-                                <select name="genres" id="genres"><br>
-                                <?=alleGenres()?>
-                                </select>
+                                    <label for="genres">Genres:</label>
+                                    <select name="genres" id="genres"><br>
+                                        <?= alleGenres() ?>
+                                    </select>
                                 </div>
                                 <button type="submit">Zoek op Genre</button>
                             </form>
@@ -64,8 +69,11 @@ require 'functions.php';
                 </div>
             </div>
         </div>
-        <div>
-            <div class="logo">FletNix</div>
-        </div>
+        <div class="logo">FletNix</div>
+        <?php if (isset($_SESSION['user'])) { ?>
+            <div class="account">
+                <?php echo "<p>Huidige datum: {$huidigeDatum} <br>Inigelogd: {$inlogtijd}</p>"; ?>
+            </div>
+        <?php } ?>
     </div>
 </div>

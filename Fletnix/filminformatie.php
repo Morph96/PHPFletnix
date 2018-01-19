@@ -77,7 +77,7 @@ while($row = $data->fetch()){
                       INNER JOIN Movie M ON MC.movie_id = M.movie_id
                       INNER JOIN Person P ON MC.person_id = P.person_id
                       WHERE M.movie_id = $movieID");
-    echo "<table border = '10'>";
+    echo "<table>";
     echo "<tr><td> Firstname </td><td> Lastname </td><td> Role </td></tr>";
 
     while($row = $data->fetch(PDO::FETCH_BOTH))
