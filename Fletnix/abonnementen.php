@@ -8,11 +8,11 @@ require 'abonnementenPrijzen.php';
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FletNix: Abonnementen</title>
     <link type="text/css" rel="stylesheet" href="CSS/Global_styleSheet.css">
 </head>
 
 <body>
+
 <div class="text-container">
     <div class="text">
         <div><p>Leuk dat je bij ons wilt inschrijven. Geef ons hieronder

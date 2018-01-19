@@ -5,6 +5,8 @@
  * Date: 1/9/2018
  * Time: 01:12 AM
  */
+ require 'Nav.php' ;
+ require 'PDOverbinding.php';
 
 ?>
 
@@ -12,13 +14,10 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
-    <title>FletNix - Paul van Mierle/Morten Pietersma</title>
     <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/Global_styleSheet.css">
 </head>
 <body>
-<?php require 'Nav.php' ;
-        require 'PDOverbinding.php';
-?>
+
 
 
 <?php

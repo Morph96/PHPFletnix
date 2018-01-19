@@ -15,7 +15,7 @@ function alleLanden()
     $landen = "";
 
     while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $landen .= "<option value='{$row['country_name']}'>{$row['country_name']}</option>";
+        $landen .= "<option value=\"{$row['country_name']}\">{$row['country_name']}</option><br>";
     }
     return $landen;
 }
@@ -122,7 +122,7 @@ function zoekResultaat()
     $results = "";
 
     while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $results .= "<a class='spacing' style='width: 15%' href='../Fletnix/filminformatie.php?movie_id={$row['movie_id']}''><img src= '{$row['cover_image']}' name='{$row['movie_id']} '>
+        $results .= "<a class='spacing'  href='../Fletnix/filminformatie.php?movie_id={$row['movie_id']}'><img src= '{$row['cover_image']}' name='{$row['movie_id']} '>
                      <p>{$row['title']}</p></a>";
     }
 
@@ -139,7 +139,7 @@ function zoekenOpGenre()
     $results = "";
 
     while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $results .= "<a class='spacing' href='../Fletnix/filminformatie.php?movie_id={$row['movie_id']}''><img src= '{$row['cover_image']}' name='{$row['movie_id']} '>
+        $results .= "<a class='spacing' href='../Fletnix/filminformatie.php?movie_id={$row['movie_id']}'><img src= '{$row['cover_image']}' name='{$row['movie_id']} '>
                      <p>{$row['title']}</p></a>";
     }
 

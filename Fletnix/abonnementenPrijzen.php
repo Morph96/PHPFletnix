@@ -13,7 +13,7 @@
         <div class="abonnement1">
             <div class="abonnement1-top"><strong>Basic</strong></div>
             <div class="spacing decoration">
-                <div>Basis abonnement is voor</div>
+                <div>Basis abonnement is <br> voor</div>
                 <div><em>2 schermen</em></div>
                 <div>en mogelijk</div>
                 <div>vanaf een prijs van</div>

@@ -18,7 +18,9 @@ if (isset($_SESSION['user'])) {
 
 ?>
 
+<!DOCTYPE HTML>
 <head>
+    <title>FletNix - Paul van Mierle/Morten Pietersma</title>
     <link type="text/css" rel="stylesheet" href="CSS/Nav.css">
 </head>
 

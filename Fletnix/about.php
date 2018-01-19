@@ -1,38 +1,17 @@
+<?php
+require 'Nav.php';
+require '../Footer/footer.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>FletNix: About</title>
-    <link type="text/css" rel="stylesheet" href="../Fletnix/CSS/CSSglobal.css">
+    <link type="text/css" rel="stylesheet" href="CSS/Global_styleSheet.css">
 </head>
 <body>
-<div class="menu-containter">
-    <div class="menu">
-        <div class="navbar">
-            <div class="dropdown">
-                <button class="dropbtn">&#9776;
-                    <i class="fa fa-caret-down"></i>
-                </button>
-                <div class="dropdown-content">
-                    <ul>Genres
-                        <li><a href=./filmoverzicht.html#Sci-fi>Sci-fi</a></li>
-                        <li><a href=./filmoverzicht.html#Actie>Actie</a></li>
-                        <li><a href=./filmoverzicht.html#Horror>Horror</a></li>
-                    </ul>
-                    <hr/>
-                    <a href="./index.html">Homepage</a>
-                    <a href="./filmoverzicht.html">Filmoverzicht</a>
-                    <a href="./about.html" class="active">Over ons</a>
-                    <a href="../Fletnix/abonnementen.php">Abonnementen</a>
-                </div>
-            </div>
-        </div>
-        <div class="logo">FletNix</div>
-    </div>
-</div>
 
-
-<div class="bodytext-container">
+<div class="text-container">
     <div class="bodytext">
         <div>
             <div>
@@ -72,6 +51,6 @@
     </div>
 </div>
 
-<div class="copyright"><p>Copyright by Paul/Morten Productions</p></div>
+
 </body>
 </html>
