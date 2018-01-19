@@ -21,25 +21,28 @@ require 'abonnementenPrijzen.php';
 </div>
 
 <div class="registratieForm">
-    <form method="get" action="registratie.php">
-        <label for="naam">Naam: </label>
-        <input type="text" name="naam" id="naam" required><br>
-        <label for="achternaam">Achternaam: </label>
-        <input type="text" name="achternaam" id="achternaam" required><br>
-        <label for="geslacht">geslacht: </label>
-        <select name="geslacht" id="geslacht" required>
-            <option value="F">Vrouw</option>
-            <option value="M">Man</option>
-        </select>
-        <label for="land">Land: </label>
-        <select name="land" id="land" required>
-            <option value="">....</option>
-            <?= alleLanden() ?>
-        </select><br>
+        <form method="get" action="registratie.php">
+            <div class="left">
+            <label for="naam">Naam: </label>
+            <input type="text" name="naam" id="naam" required><br>
+            <label for="achternaam">Achternaam: </label>
+            <input type="text" name="achternaam" id="achternaam" required><br>
+            <label for="geslacht">geslacht: </label>
+            <select name="geslacht" id="geslacht" required>
+                <option value="F">Vrouw</option>
+                <option value="M">Man</option>
+            </select>
+            <label for="land">Land: </label>
+            <select name="land" id="land" required>
+                <option value="">....</option>
+                <?= alleLanden() ?>
+            </select><br>
             <label for="geboortejaar">Geboortejaar:(BV YYYY-MM-DD)</label>
             <input type="text" name="geboortejaar" id="geboortejaar" required>
             <label for="rekeningnummer">Rekeningnummer: </label>
             <input type="text" name="rekeningnummer" id="rekeningnummer" required>
+            </div>
+            <div class="left">
             <label for="emailaddress">Emailaddress: </label>
             <input type="text" name="emailaddress" id="emailaddress" required><br>
             <label for="username">Username: </label>
@@ -58,10 +61,11 @@ require 'abonnementenPrijzen.php';
                 <option value="">....</option>
                 <?= alleBetalingsMethoden() ?>
             </select><br>
-            <button type="submit">Verzenden</button>
-
-    </form>
+    </div>
+    <button type="submit">Verzenden</button>
 </div>
+
+
 <?php require '../Footer/footer.php'; ?>
 </body>
 </html>

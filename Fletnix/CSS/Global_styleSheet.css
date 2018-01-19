@@ -65,14 +65,9 @@ Abonnementen Pagina CSS
 Registratie Form
  */
 .registratieForm {
-    display: flex;
-    justify-content: center;
-
+    
 }
 
-.registratieForm form {
-    width: 30%;
-}
 
 .registratieForm select[name], input[type=text], input[type=password] {
     width: 100%;
@@ -87,11 +82,20 @@ Registratie Form
     background-color: #4CAF50;
     color: white;
     padding: 14px 20px;
-    margin: 8px 0;
+    margin: 20px 450px;
+    margin-bottom: 80px;
     border: none;
     cursor: pointer;
-    width: 100%;
+    width: 50%;
 }
+
+.registratieForm .left {
+    width: 40%;
+    float: left;
+    margin: auto 80px;
+}
+
+
 /*
 Filmoverzicht Pagina CSS
  */
@@ -229,15 +233,6 @@ Loginscherm Pagina CSS code
     left: 0;
     padding: 1rem;
     text-align: left;
-}
-
-fixed {
-    background-color: #1A1C1A;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    height: 40px;
 }
 /*text Spacing*/
 .spacing {
