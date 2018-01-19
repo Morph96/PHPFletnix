@@ -108,10 +108,10 @@ function alleGenres()
     $genres = "";
 
     while ($row = $data->fetch(PDO::FETCH_BOTH)) {
-        $genres .= "<li><a href='../Fletnix/filmoverzicht.php?genre_name={$row['genre_name']}'>{$row['genre_name']}</a></li>";
+        $genres .= "<option value='{$row['genre_name']}'>{$row['genre_name']}</option>";
     }
-
     return $genres;
+
 }
 
 function searchResult()

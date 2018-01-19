@@ -41,13 +41,25 @@ require 'functions.php';
                     <?php if (isset($_SESSION['user'])) { ?>
                         <div class="search-container">
                             <form method="get" action="search.php">
-                                <input type="text" placeholder="Search.." name="search">
-                                <button type="submit">Submit</button>
+                                <div class="inline">
+                                <label for="zoekTitle">Zoeken op Titel:</label>
+                                <input type="text" placeholder="Titel..." name="search">
+                                </div>
+                                <button type="submit">Zoek op Titel</button>
                             </form>
                         </div>
-                        <ul>Genres
-                            <li><?= alleGenres() ?></li>
-                        </ul>
+                        <hr>
+                        <div class="genreSelectie">
+                            <form method="get" action="genres.php">
+                                <div class="inline">
+                                <label for="genres">Genres:</label>
+                                <select name="genres" id="genres"><br>
+                                <?=alleGenres()?>
+                                </select>
+                                </div>
+                                <button type="submit">Zoek op Genre</button>
+                            </form>
+                        </div>
                     <?php } ?>
                 </div>
             </div>

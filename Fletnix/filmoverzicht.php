@@ -23,14 +23,12 @@ if (!isset($_SESSION['user'])) {
     </head>
 
     <body>
-    <form method="get">
     <div class="items">
         <?=
             movies() ;
         ?>
 
     </div>
-    </form>
     <?php require '../Footer/footer.php'; ?>
     </body>
     </html>
