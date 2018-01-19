@@ -28,37 +28,37 @@
 
 $movieID = $_GET['movie_id'];
 global $dbh;
-$description = "";
-$duration = "";
-$price = "";
-$regfname = "";
-$reglname = "";
-$pub_year = "";
+$beschrijving= "";
+$duratie = "";
+$prijs = "";
+$reg_vnaam = "";
+$reg_anaam = "";
+$uitgave_jaar = "";
 $trailer = "";
-$image = "";
-$title = "";
+$afbeelding = "";
+$titel = "";
 
 $data = $dbh->query("SELECT title, duration, description, publication_year, price, cover_image, URL FROM Movie 
                 WHERE movie_id = $movieID");
 while($row = $data->fetch()){
-    $description .= $row['description'];
+    $beschrijving .= $row['description'];
     $trailer .= $row['URL'];
-    $image .= $row['cover_image'];
-    $title .= $row['title'];
-    $pub_year .= $row['publication_year'];
-    $duration .= $row['duration'];
-    $price .= $row['price'];
+    $afbeelding .= $row['cover_image'];
+    $titel .= $row['title'];
+    $uitgave_jaar .= $row['publication_year'];
+    $duratie .= $row['duration'];
+    $prijs .= $row['price'];
 
 }
 
 $data = $dbh ->query("SELECT p.firstname, p.lastname FROM Movie M
-INNER JOIN Movie_Director MD ON M.movie_id = MD.movie_id
-INNER JOIN Person P ON MD.person_id = P.person_id
-WHERE M.movie_id = $movieID");
+                INNER JOIN Movie_Director MD ON M.movie_id = MD.movie_id
+                INNER JOIN Person P ON MD.person_id = P.person_id
+                WHERE M.movie_id = $movieID");
 
 while($row = $data->fetch()){
-    $regfname .= $row['firstname'];
-    $reglname .= $row['lastname'];
+    $reg_vnaam .= $row['firstname'];
+    $reg_anaam .= $row['lastname'];
 }
 ?>
 
@@ -66,14 +66,14 @@ while($row = $data->fetch()){
 <div class="movie_trailer">
     <div class="trailer">
             <div class="imageDescription">
-                <img src="<?php echo $image ?>">
+                <img src="<?php echo $afbeelding ?>">
                     <div class="Cast">
-                        <h2><?php echo $title; ?></h2>
-                        <p><?php echo $description; ?></p>
-                        <p> Regisseur: <?php echo $regfname; echo " "; echo $reglname; ?> <br>
-                            Lengte: <?php echo $duration; ?> minuten <br>
-                            Year of publication: <?php echo $pub_year; ?> <br>
-                            Prijs: <?php echo $price; ?>
+                        <h2><?php echo $titel; ?></h2>
+                        <p><?php echo $beschrijving; ?></p>
+                        <p> Regisseur: <?php echo $reg_vnaam; echo " "; echo $reg_anaam; ?> <br>
+                            Lengte: <?php echo $duratie; ?> minuten <br>
+                            Year of publication: <?php echo $uitgave_jaar; ?> <br>
+                            Prijs: <?php echo $prijs; ?>
                         </p>
                     </div>
             </div>
@@ -81,12 +81,8 @@ while($row = $data->fetch()){
     </div>
 </div>
 
-
-
-
 <div class="Actors">
     <?php $data = $dbh-> query("SELECT P.firstname, P.lastname, MC.role FROM Movie_Cast MC 
-                      
                       INNER JOIN Movie M ON MC.movie_id = M.movie_id
                       INNER JOIN Person P ON MC.person_id = P.person_id
                       WHERE M.movie_id = $movieID");
