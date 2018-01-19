@@ -17,8 +17,7 @@ $search = $_GET['search'];
     <link type="text/css" rel="stylesheet" href="CSS/Global_styleSheet.css">
 </head>
 <body>
-<div class="results-container">
-    <h1>Dit zijn uw zoek resultaten voor "<?= $search ?>":</h1>
+<div class="center"><h1>Dit zijn uw zoek resultaten voor "<?= $search ?>":</h1></div>
     <div class="results">
         <?= zoekResultaat(); ?>
     </div>

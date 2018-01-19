@@ -260,14 +260,10 @@ fixed {
     width: 90%;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: blue;
 }
 
 .trailer img{
-
     align-content: center;
-
-    border: 10px solid red;
 }
 
 .imageDescription
@@ -295,7 +291,6 @@ fixed {
     display: flex;
     justify-content: right;
     align-self: right;
-    background-color: red;
 
 }
 
@@ -303,3 +298,18 @@ fixed {
     text-align: center;
 }
 
+.Actors {
+    margin-left: 98px;
+}
+
+.Actors table{
+    width: 95%;
+    border: solid black 1px;
+}
+
+.Actors th, td {
+    padding: 15px;
+    border: solid black 1px;
+
+
+}
